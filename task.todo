@@ -1,0 +1,34 @@
+Case Study 1:	Uniqlo_Ruby_Watir_Automation
+Use Optus Spring Digital Shop web site https://www.optus.com.au to automate all the scenarios listed below:
+
+Scenario 1:	Verify user is able to retrieve Mobile Phones after applying filters on Device listing page
+	SD Shop flow:	Launch Portal -> Shop under For You menu -> Latest Phones under Mobile -> Put filters on Brands/Memory/Speed/Payment Terms and use Sort By with price (should be min. 3 phones after putting filters)
+
+Scenario 2:	Verify user is able to add Data Sim only plan in shopping cart and checkout till order summary page
+	SD Shop flow:	Launch Portal -> Shop under For You menu -> Data SIMs under Home Internet & nbn -> Choose a plan -> Checkout -> Fill Personal details -> Number selection -> Fill Shipment delivery details -> Verify items in Order Summary (Do not click on Place order button as it is PROD)
+
+Scenario 3:	Verify user is able to add Tablet Device with plan in shopping cart and checkout till order summary page
+	SD Shop flow:	Launch Portal -> Shop under For You menu -> iPads & Tablets under Mobile -> Choose a Tablet -> Choose a plan -> Checkout -> Fill Personal details -> Number selection -> Fill Shipment delivery details -> Verify items in Order Summary (Do not click on Place order button as it is PROD)
+
+Scenario 4:	Verify user is able to add Mobile Device with plan and one addons & accessories in shopping cart and checkout till order summary page
+	SD Shop flow:	Launch Portal -> Shop under For You menu -> Latest Phones under Mobile -> Choose a Mobile -> Choose a plan -> Add one Add-on -> Add one Accessory -> Checkout -> Fill Personal details -> Number selection -> Fill Shipment delivery details -> Verify items in Order Summary (Do not click on Place order button as it is PROD)
+
+Guidelines to follow:
+	• Create a Ruby project with required folder structure
+	• Use bundler to create Gemfile and list all the required gems for the project
+	• Create one Feature file with all 4 scenarios and create corresponding Step definitions
+	• Follow Page Object Model approach to declare locators ---------------------------------------------
+	• Use profile and formatter to generate reports using cucumber.yml file
+	• Use Before/After hooks to launch/close browser and AfterStep hook to take screenshots using hooks.rb file
+	• Ensure your scripts support all major browsers (at least Chrome & Firefox)----------------------------------
+	• Ensure to cover all verification & validation points (like page headers, item name & price)--------------------------------------------
+	• All user data like Plans, Devices, Add-on & Accessories names should be parameterized from Feature file------------------------------------
+	• Publish a HTML test report with step-to-step log messages and verification/validation details------------------------
+	• Upload final code to GitLab repository--------------------------------
+	• Create a Jenkins job and configure Build Trigger for your repo--------------------------
+
+
+#To execute a particular Feature
+cucmber --tags tageName
+cucumber --publish --tags tageName
+cucumber --profile html_report --tags @tagNmae

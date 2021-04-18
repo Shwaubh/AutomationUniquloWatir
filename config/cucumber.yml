@@ -1,0 +1,3 @@
+# default: --publish
+default: --profile create_html_report
+create_html_report: --format html --out=report.html
